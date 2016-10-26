@@ -1,0 +1,115 @@
+/*
+	Theme Name: sroc_theme
+	Author: Sophie Roberts
+*/
+
+/* --- HEADER --- */
+
+.header_title {
+  height: 30vh;
+}
+.header_title, nav {
+  text-align: center;
+}
+.header_title h1 {
+  font-size: 3em;
+}
+
+/* --- NAV --- */
+
+.nav {
+  background-color: #db0000;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+.nav ul li {
+  display: inline;
+  padding: 10px;
+}
+.nav li a {
+  color: white;
+  text-decoration: none;
+}
+.nav li a:hover {
+  text-shadow: 0 0 0.1em white, 0 0 0.1em white
+}
+.nav li a.active {
+  background-color: white;
+  padding: 15px 5px 15px 5px;
+  color: #db0000;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 10px 10px 0px 0px; 
+}
+.nav #menu-item-36 a {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
+.nav #menu-item-36 a:hover {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 0.1em white, 0 0 0.1em white
+}
+
+/* --- PAGE --- */
+
+main {
+  margin: 5%;
+}
+section {
+  display: flex;
+  flex-direction: row 
+  justify-content: space-around
+}
+section > h1 {
+  font-size: 1.5em;
+}
+.right {
+  width: 25%;
+}
+.left {
+  width: 25%;
+}
+#events {
+  height: 300px;
+  border: 1px solid red;
+}
+#results {
+  height: 300px;
+  border: 1px solid red;
+}
+.blog_posts {
+  margin-left: 2%;
+  margin-right: 2%;
+  border: 1px solid red;
+  width: 50%;
+  height: 100%;
+}
+.recently, .post_content ul {
+  list-style: none;
+  display: inline;
+}
+date {
+  color: grey;
+  font-size: 0.8rem;  
+}
+.post_title {
+  padding: 15px 10px;
+}
+.post_title a {
+  padding: 10px, 5px;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  margin-top: 100px;
+}
+.post_title a:hover {
+  color: #00B233;
+}
+.excerpt {
+  padding-left: 15px ;
+}
