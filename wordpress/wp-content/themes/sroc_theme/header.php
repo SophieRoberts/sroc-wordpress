@@ -25,10 +25,14 @@
 			<!-- header -->
 			<header class="header clear" role="banner">
 
-					<!-- /logo -->
+          <div class="background">
+          </div>
+					
           <div class="header_title">
-            <h1>SROC - <em>Red Rose Orienteers</em></h1>
-            <h3>South Ribble Orienteering Club, England's first, Founded 1964</h3>
+            <div class='title'>
+              <h1>SROC - <em>Red Rose Orienteers</em></h1>
+              <h3>South Ribble Orienteering Club, England's first, Founded 1964</h3>
+            </div>
           </div>
 					<!-- nav -->
 					<nav class="nav" role="navigation">

@@ -2,34 +2,87 @@
 	Theme Name: sroc_theme
 	Author: Sophie Roberts
 */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  font-family: 'Open Sans', sans-serif;
+  
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: #00B433;
+}
 
 /* --- HEADER --- */
-
+.header {
+  height: 100%;
+}
+.background {
+  height: 40vh;
+  background-image: url("img/map.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+}
 .header_title {
-  height: 30vh;
+  height: 40vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.title {
+  position: relative;
+  top: 30%;
 }
 .header_title, nav {
   text-align: center;
 }
 .header_title h1 {
   font-size: 3em;
+  margin-top: 0;
+  text-shadow: 0 0 0.1em white, 0 0 0.1em white
+  
 }
-
+.header_title h3 {
+  text-shadow: 0 0 0.1em white, 0 0 0.1em white;
+  font-size: 1.3em
+}
 /* --- NAV --- */
 
 .nav {
   background-color: #db0000;
-  height: 50px;
+  height: 100%;
   line-height: 50px;
   font-size: 1.1em;
   letter-spacing: 2px;
+  width: 100%;
+  position: relative;
+  bottom: 20px;
 }
+/*.nav.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  line-height: 25px;
+  z-index: 10;
+}
+.nav.fixed ul li{
+  position: relative;
+  bottom: 5px;
+}*/
 .nav ul li {
   display: inline;
   padding: 10px;
+  position: relative;
+  top: 8px;
+  white-space: nowrap;
 }
 .nav li a {
   color: white;
+  
   text-decoration: none;
 }
 .nav li a:hover {
@@ -60,6 +113,40 @@
 main {
   margin: 5%;
 }
+
+.top {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+  
+}
+#events, #results {
+  width: 40%;
+  height: 300px;
+  margin-bottom: 5%;
+  background-color: rgba(128,128,128,0.1);
+  box-shadow: 2px 2px 5px rgba(128,128,128,0.5);
+  
+/*  border: 1px solid red; */
+}
+#events > div {
+  margin-left: 2%;
+}
+
+#events ol.tribe-list-widget {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+#events span.tribe-event-date-start {
+  position: relative;
+  bottom: 15px;
+}
+#events h2.rounded {
+  margin-bottom: 0;
+}
 section {
   display: flex;
   flex-direction: row 
@@ -70,22 +157,18 @@ section > h1 {
 }
 .right {
   width: 25%;
+  
 }
-.left {
-  width: 25%;
+.posts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
 }
-#events {
-  height: 300px;
-  border: 1px solid red;
-}
-#results {
-  height: 300px;
-  border: 1px solid red;
-}
+
 .blog_posts {
-  margin-left: 2%;
+/*  border: 1px solid red;*/
   margin-right: 2%;
-  border: 1px solid red;
+  margin-left: 2%;
   width: 50%;
   height: 100%;
 }
@@ -108,8 +191,19 @@ date {
   margin-top: 100px;
 }
 .post_title a:hover {
-  color: #00B233;
+  color: #00B433;
 }
 .excerpt {
-  padding-left: 15px ;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: justify;
+
+}
+
+/* --- FOOTER --- */
+
+.buttons {
+  height: 15vh;
+  background-color: #db0000;
+  clear: both;
 }

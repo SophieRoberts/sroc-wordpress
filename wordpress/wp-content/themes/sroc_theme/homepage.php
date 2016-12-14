@@ -2,16 +2,21 @@
 Template Name: Home Page
 -->
 <?php get_header(); ?>
-
+  <!-- <div class='nav_placeholder'>
+  </div> -->
 	<main role="main">
-		<!-- section -->
-		<section>
+    <div class='top'>
+      <div id="events">
+        <?php dynamic_sidebar( 'next_events' ); ?>
+      </div>
+      <div id='results'>
+        <h4>Recent Results</h4>
+      </div>
+    </div>
+    <div class='posts'>
       <div class='left'>
-        <div id="events">
-          <h4>Next Events</h4>
-        </div>
-        <div id='results'>
-          <h4>Recent Results</h4>
+        <div id='twitter'>
+          <a class="twitter-timeline" data-width="310" data-height="834" data-link-color="#db0000" href="https://twitter.com/SROC_1964">Tweets by SROC_1964</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
       <div class ='blog_posts'>
@@ -57,51 +62,30 @@ Template Name: Home Page
             </ul>
           </div>
         </section>
-        
       </div>
       <div class='right'>
-        <div id='twitter'>
-          <a class="twitter-timeline" data-width="300" data-height="300" data-link-color="#db0000" href="https://twitter.com/SROC_1964">Tweets by SROC_1964</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
         <div id="weather">
           <script type="text/javascript"> moWWidgetParams="moAllowUserLocation:true~moBackgroundColour:white~moColourScheme:white~moDays:5~moDomain:www.metoffice.gov.uk~moFSSI:320301~moListStyle:vertical~moMapDisplay:none~moShowFeelsLike:true~moShowUV:true~moShowWind:true~moSpecificHeight:380~moSpecificWidth:310~moSpeedUnits:M~moStartupLanguage:en~moTemperatureUnits:C~moTextColour:black~moGridParams:weather,temperature,pop,wind,warnings~"; </script><script type="text/javascript" src="http://www.metoffice.gov.uk/public/pws/components/yoursite/loader.js"> </script></p>
         </div>
         <div id="strava">
-          <iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/clubs/sroc/latest-rides/261474158679483a36cda97bea22308471d52123?show_rides=true'></iframe>
+          <iframe height='454' width='310' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/clubs/sroc/latest-rides/261474158679483a36cda97bea22308471d52123?show_rides=true'></iframe>
         </div>
       </div>
-     
-     
+    </div>
+      
+    
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php the_content(); ?>
+  </article>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <?php endwhile; ?>
 
-				<?php the_content(); ?>
-        
-
-
-
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
+  <?php else: ?>
 
 
-			</article>
-			<!-- /article -->
+  <?php endif; ?>
 
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-
+  </main>
 
 <?php get_footer(); ?>
+
