@@ -24,16 +24,25 @@
 
 			<!-- header -->
 			<header class="header clear" role="banner">
+        <div id='container'>
+        	<?php if (has_post_thumbnail()) : ?>
+            <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+              <div class='background' style="background-image: url('<?php echo $thumb['0'];?>')"></div>
+              <div class="header_title">
+                <div class='title'>
+                  <h1><?php the_title()?></h1>
+                </div>
+              </div>
+          <?php else : ?>
+            <div class='background'></div>
+              <div class="header_title">
+                <div class='title'>
+                  <h1><?php the_title()?></h1>
+                </div>
+              </div>
+        		<?php endif; ?>
 
-          <div class="background">
-          </div>
-					
-          <div class="header_title">
-            <div class='title'>
-              <h1>SROC - <em>Red Rose Orienteers</em></h1>
-              <h3>South Ribble Orienteering Club, England's first, Founded 1964</h3>
-            </div>
-          </div>
+
 					<!-- nav -->
 					<nav class="nav" role="navigation">
             <?php sroc_nav(); ?>

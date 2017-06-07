@@ -86,6 +86,29 @@ function sroc_nav()
 		)
 	);
 }
+function footer_nav()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'extra-menu',
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => 'wp_page_menu',
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul>%3$s</ul>',
+		'depth'           => 0,
+		'walker'          => ''
+		)
+	);
+}
 
 /**
  * Register our sidebars and widgetized areas.
@@ -104,6 +127,20 @@ function arphabet_widgets_init() {
 
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+function keep_my_links($text) {
+  global $post;
+if ( '' == $text ) {
+    $text = get_the_content('');
+    $text = apply_filters('the_content', $text);
+    $text = str_replace('\]\]\>', ']]>', $text);
+    $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+    $text = strip_tags($text, '<a>');
+  }
+  return $text;
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'keep_my_links');
 
 
 // Load HTML5 Blank scripts (header.php)
